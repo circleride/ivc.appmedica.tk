@@ -57,9 +57,8 @@
 <gap:plugin name="phonegap-plugin-barcodescanner" source="npm" />
 <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 
-<!-- Proyecto: SanzonApp | ID: sanzonapp (# 615864594897) -->
 <plugin name="phonegap-plugin-push" source="npm">
-<param name="SENDER_ID" value="615864594897" />
+<param name="SENDER_ID" value="930456109326" />
 </plugin>
 
 <gap:plugin name="cordova-plugin-customurlscheme" source="npm">
