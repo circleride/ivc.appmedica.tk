@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="ivc.appmedica.tk" version="1.0.1">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="tk.appmedica.ivc" version="1.0.0">
 
 <name>IVC</name>
 <description>App Medica IVC</description>
