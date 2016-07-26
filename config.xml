@@ -68,6 +68,7 @@
 
 <gap:plugin name="de.appplant.cordova.plugin.background-mode" />
 
+<plugin name="cordova-sqlite-ext" source="npm" />
 <plugin name="hazems-cordova-plugin-sms" source="npm" />
 
 <gap:plugin name="cordova-plugin-googlemaps" source="npm">
