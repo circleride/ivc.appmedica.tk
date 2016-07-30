@@ -6,9 +6,10 @@
 
 <!-- content src="index.html"/ -->
 
+<preference name="phonegap-version" value="cli-5.2.0" />
+
 <preference name="DisallowOverscroll" value="true"/>
 <preference name="android-minSdkVersion" value="14"/>
-
     <preference name="permissions"                value="none"/>
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
@@ -58,7 +59,7 @@
 <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 
 <!-- <plugin name="phonegap-plugin-push" spec="1.6.0" source="npm" >-->
-<plugin name="phonegap-plugin-push" spec="1.6.0" source="npm" >
+<plugin name="phonegap-plugin-push" source="npm" >
 <param name="SENDER_ID" value="930456109326" />
 </plugin>
 
