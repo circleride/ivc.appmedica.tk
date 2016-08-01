@@ -37,7 +37,7 @@
 <script src="vendor/lightgallery/js/lg-pager.js"></script>
 <!-- <script src="vendor/lightgallery/js/lg-hash.js"></script>-->
 
-<script src="js/header_web.js?1469873666"></script>
+<!--<script src="js/header_web.js"></script>-->
 
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="barcodescanner.js"></script>
@@ -105,36 +105,10 @@
 <div class="aside-inner">
 <nav data-sidebar-anyclick-close="" class="sidebar">
 <!-- START sidebar nav-->
-<ul class="nav">
-<li class="has-user-block">
-<div id="user-block" class="collapse in">
-<div class="item user-block">
 
-<div class="user-block-info">
-<span class="user-block-name">Hola </span>
-<span class="user-block-role">Usuario Prueba  </span>
-<a href="javascript:;" onclick="window.url_target('editar_perfil');" class="btn btn-default btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar datos</a>
-</div>
+<span class="div_usuario_sesion">
 
-</div>
-</div>
-</li>
-<li>
-<a href="javascript:;" onclick="window.url_target('');" title="Inicio">
-<i class="fa fa-home" aria-hidden="true"></i> <span>Inicio</span>
-</a>
-</li>
-<li><a href="javascript:;" onclick="window.url_target('buscar_medico');" title="Buscar Medico">
-<i class="fa fa-search" aria-hidden="true"></i> <span>Buscar M&eacute;dico</span></a></li>
-<li class=""><a href="javascript:;" onclick="window.url_target('buscar_vendas_medicadas');" title="Buscar Medico">
-<i class="fa fa-search" aria-hidden="true"></i> <span>Buscar Vendas Medicadas</span></a></li>
-<li>
-<a href="javascript:;" onclick="window.url_target('cerrar_sesion');" title="Buscar Medico">
-<i class="fa fa-sign-out" aria-hidden="true"></i>
-<span>Cerrar Sesi&oacute;n</span>
-</a>
-</li>
-</ul>
+</span>
 
 <!-- END sidebar nav-->
 </nav>
@@ -167,7 +141,6 @@
 
 <script type="text/javascript" charset="ISO-8859-1">
 //$.getScript(window.url_server_firebase, function(){ });
-
 window.onOnline = function onOnline(handle) {
 if(handle) {  } else { handle = window.handle_url; }
 var token_push = window.localStorage.getItem("token_push");
@@ -184,14 +157,19 @@ $(this).prepend("No se pudo enlazar con el servidor.<br>" + e + "<br>"+jqxhr);
 });
 };
 
-window.load_page = function load_page(page){
+window.url_target = function url_target(page,id){
+if(id == "undefined"){ id = ""; }
 if(page) {
-$(".ajax-content").html("<div class='main-content'><div align='center'><i class='fa fa-cog fa-spin'></i><br><i class='fa fa-plug' aria-hidden='true'></i> "+window.url_server+"</div></div>");
-$.getJSON(window.url_server+"/movil/html.templates.php", { key: window.my_uuid, html: page, view_as: 'json' }, function (j) {
-var data_html = j['html'];
+$('.ajax-content').html('<div align="center"><br><br><h4><i class="fa fa-spinner fa-spin"></i></h4><br></div>');
+$.getJSON(window.url_server+"/movil/html.templates.php", { key: window.my_uuid, html: page, id: id, view_as: 'json' }, function (j) {
+//var data_html = j['html']; //$(".ajax-content").html(data_html);
+var stateObj = { html: url };
+history.pushState(stateObj, "", "index.?html="+url+"&id="+id);
+var data_html = j['content'];
 $(".ajax-content").html(data_html);
+window.onpopstate = function(event) { window.url_target(""); };
 });
-} };
+}};
 
 function onOffline() {
 $.getScript('phonegap/offline.js', function(){
