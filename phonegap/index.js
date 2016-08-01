@@ -80,9 +80,6 @@ var push = PushNotification.init({
 android: {
 senderID: "930456109326"
 },
-browser: {
-pushServiceURL: window.url_server+'/tools/push_api.php?my_uuid='+window.my_uuid
-},
 ios: {
 alert: "true",
 badge: "true",
