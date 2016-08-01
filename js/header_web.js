@@ -102,6 +102,7 @@ $("input[name=Lon]").val(latLng.lng());
 };
 });
 
+
 window.pop_get_form = function pop_get_form(url) {
 $(".modal-content").html('<div align="center"><i class="fa fa-share fa-spin"></i></div>');
 $(".modal-content").load('https://ivc.appmedica.tk/'+ url);
@@ -119,7 +120,6 @@ $(".ajax-content").html(data_html);
 window.onpopstate = function(event) { window.url_target(""); };
 });
 };
-
 
 jQuery(document).ready(function($){
 window.enable_gallery = function enable_gallery(class_lg){
