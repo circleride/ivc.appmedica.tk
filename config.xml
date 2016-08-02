@@ -5,8 +5,10 @@
 <author href="http://www.appmedica.tk" email="soporte@appmedica.tk">IVC</author>
 
 <!-- content src="index_example.html"/ -->
-
+<!--
 <preference name="phonegap-version" value="cli-5.2.0" />
+-->
+
 
 <preference name="DisallowOverscroll" value="true"/>
 <preference name="android-minSdkVersion" value="15"/>
