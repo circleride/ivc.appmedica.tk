@@ -59,10 +59,20 @@ if (navigator.geolocation) {
 navigator.geolocation.getCurrentPosition(showPosition);
 //alert("Geolicalizacion soportada.");
 function showPosition(position) {
-var geo_info = "lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
-window.localStorage.setItem("User_Lat", position.coords.latitude);
-window.localStorage.setItem("User_Lon", position.coords.longitude);
+
+var Lat = position.coords.latitude;
+var Lon = position.coords.longitude;
+if(Lat != ""){ window.localStorage.setItem("User_Lat", Lat); }
+if(Lon != ""){ window.localStorage.setItem("User_Lon", Lon); }
 window.localStorage.setItem("geo_aprox", position.coords.accuracy);
+$("#User_Lat").val(Lat);
+$("#User_Lon").val(Lon);
+$(".User_Lat").val(Lat);
+$(".User_Lon").val(Lon);
+$(".User_LatLon_print").html(Lat+","+Lon);
+$(".User_Lat_print").html(Lat);
+$(".User_Lon_print").html(Lon);
+
 //alert(geo_info);
 }
 } else {
@@ -112,9 +122,9 @@ var push = PushNotification.init({
 },
 "windows": {}
 });
-//console.log('after init');
+
 push.on('registration', function(data) {
-//$("#info_device").append(JSON.stringify(data));
+$("#info_device").append(JSON.stringify(data));
 //console.log('registration event: ' + data.registrationId);
 var oldRegId = localStorage.getItem('registrationId');
 if (oldRegId !== data.registrationId) {
@@ -132,7 +142,7 @@ window.localStorage.setItem("token_push", JSON.stringify(data));
 });
 push.on('error', function(e) {
 //console.log("push error = " + e.message);
-//$("#info_device").append(JSON.stringify(e));
+$("#info_device").append(JSON.stringify(e));
 //window.localStorage.setItem("token_push", JSON.stringify(e));
 if(typeof GetPushNotif == 'function') {
 window.GetPushNotif(data);
@@ -142,7 +152,7 @@ window.GetPushNotif = data;
 });
 
 push.on('notification', function(data) {
-//$("#info_device").append(JSON.stringify(data));
+$("#info_device").append(JSON.stringify(data));
 //window.localStorage.setItem("token_push", JSON.stringify(data));
 console.log('notification event');
 //window.GetPushNotif = function GetPushNotif(data) {  };
