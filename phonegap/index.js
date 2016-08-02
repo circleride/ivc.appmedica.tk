@@ -37,7 +37,7 @@ color_header_aplicativo = color_header_aplicativo_def;
 } else {
 //color_header_aplicativo = color_header_aplicativo;
 }
-$('.am-top-header').css("background-color", color_header_aplicativo);
+$('.am-top-header').css("background-color", color_header_aplicativo );
 
 function guid() {
 function s4() {
@@ -45,7 +45,6 @@ return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 }
 return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
 }
-
 var my_uuid = localStorage.getItem('my_uuid');
 var my_uuid_def = guid();
 if (!my_uuid) {
@@ -55,9 +54,25 @@ localStorage.setItem('my_uuid', my_uuid_def);
 window.my_uuid = my_uuid;
 }
 
+if (navigator.geolocation) {
+//navigator.geolocation.watchPosition(showPosition);
+navigator.geolocation.getCurrentPosition(showPosition);
+//alert("Geolicalizacion soportada.");
+function showPosition(position) {
+var geo_info = "lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
+window.localStorage.setItem("User_Lat", position.coords.latitude);
+window.localStorage.setItem("User_Lon", position.coords.longitude);
+window.localStorage.setItem("geo_aprox", position.coords.accuracy);
+//alert(geo_info);
+}
+} else {
+//alert("Geolicalizacion no soportada.");
+}
+
 window.handle_url = "";
 function handleOpenURL(url) {
 setTimeout(function() {
+//alert("Recibido: " + url);
 window.handle_url = url;
 window.onOnline(url);
 }, 0);
@@ -67,42 +82,70 @@ var app = {
 initialize: function() {
 this.bindEvents();
 },
+// Bind Event Listeners
+//
+// Bind any events that are required on startup. Common events are:
+// 'load', 'deviceready', 'offline', and 'online'.
 bindEvents: function() {
 document.addEventListener('deviceready', this.onDeviceReady, false);
 document.getElementById('scan').addEventListener('click', this.scan, false);
 },
+// deviceready Event Handler
+//
+// The scope of 'this' is the event. In order to call the 'receivedEvent'
+// function, we must explicitly call 'app.receivedEvent(...);'
 onDeviceReady: function() {
+//console.log('Received Device Ready Event');
+//console.log('calling setup push');
 app.setupPush();
-app.setupMaitretApp();
 },
 setupPush: function() {
+//console.log('calling push init');
 var push = PushNotification.init({
-android: {
-senderID: "930456109326"
+"android": {
+"senderID": "930456109326"
 },
-ios: {
-alert: "true",
-badge: "true",
-sound: "true"
+"ios": {
+"sound": true,
+"vibration": true,
+"badge": true
 },
-windows: {}
+"windows": {}
 });
+//console.log('after init');
 push.on('registration', function(data) {
+//$("#info_device").append(JSON.stringify(data));
+//console.log('registration event: ' + data.registrationId);
 var oldRegId = localStorage.getItem('registrationId');
 if (oldRegId !== data.registrationId) {
+// Save new registration ID
 localStorage.setItem('registrationId', data.registrationId);
+// Post registrationId to your app server as the value has changed
 window.localStorage.setItem("token_push", JSON.stringify(data));
 }
+//var parentElement = document.getElementById('registration');
+//var listeningElement = parentElement.querySelector('.waiting');
+//var receivedElement = parentElement.querySelector('.received');
+//listeningElement.setAttribute('style', 'display:none;');
+//receivedElement.setAttribute('style', 'display:block;');
+
 });
 push.on('error', function(e) {
+//console.log("push error = " + e.message);
+//$("#info_device").append(JSON.stringify(e));
+//window.localStorage.setItem("token_push", JSON.stringify(e));
 if(typeof GetPushNotif == 'function') {
 window.GetPushNotif(data);
 } else {
 window.GetPushNotif = data;
 }
 });
+
 push.on('notification', function(data) {
+//$("#info_device").append(JSON.stringify(data));
+//window.localStorage.setItem("token_push", JSON.stringify(data));
 console.log('notification event');
+//window.GetPushNotif = function GetPushNotif(data) {  };
 if(typeof GetPushNotif == 'function') {
 window.GetPushNotif(data);
 } else {
@@ -115,74 +158,5 @@ data.title,           // title
 'Ok'                  // buttonName
 ); */
 });
-},
-
-setupMaitretApp: function() {
-
-if (navigator.geolocation) {
-//navigator.geolocation.watchPosition(showPosition);
-navigator.geolocation.getCurrentPosition(showPosition);
-//alert("Geolicalizacion soportada.");
-function showPosition(position) {
-var geo_info = "lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
-
-var Lat = position.coords.latitude;
-var Lon = position.coords.longitude;
-if(Lat != ""){ window.localStorage.setItem("User_Lat", Lat); }
-if(Lon != ""){ window.localStorage.setItem("User_Lon", Lon); }
-window.localStorage.setItem("geo_aprox", position.coords.accuracy);
-$("#User_Lat").val(Lat);
-$("#User_Lon").val(Lon);
-$(".User_Lat").val(Lat);
-$(".User_Lon").val(Lon);
-$(".User_LatLon_print").html(Lat+","+Lon);
-$(".User_Lat_print").html(Lat);
-$(".User_Lon_print").html(Lon);
-}
-} else {
-//alert("Geolicalizacion no soportada.");
-}
 }
 };
-
-jQuery(document).ready(function($) {
-window.enable_areyousure = function enable_areyousure() {
-$('form').areYouSure( {'message':'Aun no guarda cambios &iquest;est&aacute; seguro?'} );
-};
-});
-
-jQuery(document).ready(function($){
-window.enable_geocomplete = function enable_geocomplete(target) {
-if(target){ } else { target = ".Direccion"; }
-$(target).geocomplete({
-details: "form",
-types: ["geocode", "establishment"],
-detailsAttribute: "data-geo",
-});
-$(target).bind("geocode:dragged", function(event, latLng){
-$("input[name=Lat]").val(latLng.lat());
-$("input[name=Lon]").val(latLng.lng());
-});
-//$("#reset").click(function(){ $(target).geocomplete("resetMarker"); $("#reset").hide(); return false; });
-};
-});
-
-window.pop_get_form = function pop_get_form(url) {
-$(".modal-content").html('<div align="center"><i class="fa fa-share fa-spin"></i></div>');
-$(".modal-content").load(window.url_server+'/'+ url);
-};
-
-jQuery(document).ready(function($){
-window.enable_gallery = function enable_gallery(class_lg){
-if(class_lg == ""){ class_lg = ".gallery_lg"; }
-$(class_lg).lightGallery({
-thumbnail:false,
-animateThumb: false,
-showThumbByDefault: false,
-fullScreen: false,
-download: false,
-hash: false
-});
-};
-window.enable_gallery();
-});
