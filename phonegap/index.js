@@ -59,7 +59,6 @@ if (navigator.geolocation) {
 navigator.geolocation.getCurrentPosition(showPosition);
 //alert("Geolicalizacion soportada.");
 function showPosition(position) {
-
 var Lat = position.coords.latitude;
 var Lon = position.coords.longitude;
 if(Lat != ""){ window.localStorage.setItem("User_Lat", Lat); }
@@ -72,8 +71,6 @@ $(".User_Lon").val(Lon);
 $(".User_LatLon_print").html(Lat+","+Lon);
 $(".User_Lat_print").html(Lat);
 $(".User_Lon_print").html(Lon);
-
-//alert(geo_info);
 }
 } else {
 //alert("Geolicalizacion no soportada.");
