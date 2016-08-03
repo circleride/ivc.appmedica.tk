@@ -96,6 +96,7 @@ document.getElementById('scan').addEventListener('click', this.scan, false);
 },
 onDeviceReady: function() {
 app.setupPush();
+app.carga_app();
 },
 setupPush: function() {
 var push = PushNotification.init({
@@ -115,20 +116,12 @@ push.on('registration', function(data) {
 //console.log('registration event: ' + data.registrationId);
 var oldRegId = localStorage.getItem('registrationId');
 if (oldRegId !== data.registrationId) {
-// Save new registration ID
 localStorage.setItem('registrationId', data.registrationId);
-// Post registrationId to your app server as the value has changed
 window.localStorage.setItem("token_push", JSON.stringify(data));
 }
-//var parentElement = document.getElementById('registration');
-//var listeningElement = parentElement.querySelector('.waiting');
-//var receivedElement = parentElement.querySelector('.received');
-//listeningElement.setAttribute('style', 'display:none;');
-//receivedElement.setAttribute('style', 'display:block;');
 
 });
 push.on('error', function(e) {
-//console.log("push error = " + e.message);
 //$("#info_device").append(JSON.stringify(e));
 //window.localStorage.setItem("token_push", JSON.stringify(e));
 if(typeof GetPushNotif == 'function') {
@@ -141,8 +134,6 @@ window.GetPushNotif = data;
 push.on('notification', function(data) {
 //$("#info_device").append(JSON.stringify(data));
 //window.localStorage.setItem("token_push", JSON.stringify(data));
-//console.log('notification event');
-//window.GetPushNotif = function GetPushNotif(data) {  };
 if(typeof GetPushNotif == 'function') {
 window.GetPushNotif(data);
 } else {
@@ -155,11 +146,8 @@ data.title,           // title
 'Ok'                  // buttonName
 ); */
 });
-}
-};
-
-app.initialize();
-
+},
+carga_app: function(){
 window.url_target = function url_target(page,id){
 if(id == "undefined"){ id = ""; }
 if(page) {
@@ -172,12 +160,16 @@ var data_html = j['content'];
 $(".ajax-content").html(data_html);
 window.onpopstate = function(event) { window.url_target(""); };
 });
-}};
-
+}
+};
 document.addEventListener("backbutton", backKeyDown, true);
 function backKeyDown(){
 window.url_target("");
 }
+}
+};
+
+app.initialize();
 
 jQuery(document).ready(function($) {
 window.enable_areyousure = function enable_areyousure() {
