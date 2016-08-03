@@ -68,9 +68,8 @@
 <param name="URL_SCHEME" value="appmedica-ivc" />
 </gap:plugin>
 
-<!-- <gap:plugin name="de.appplant.cordova.plugin.background-mode" /> -->
-
-<plugin name="hazems-cordova-plugin-sms" source="npm" />
+<!-- <gap:plugin name="de.appplant.cordova.plugin.background-mode" />
+<plugin name="hazems-cordova-plugin-sms" source="npm" /> -->
 
 <!--<gap:plugin name="cordova-plugin-googlemaps" source="npm">
 <param name="API_KEY_FOR_ANDROID" value="AIzaSyCXFNRlaxHSxI8Gqk0iaII5YDTTLwGejSM" />
