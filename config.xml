@@ -72,10 +72,10 @@
 
 <plugin name="hazems-cordova-plugin-sms" source="npm" />
 
-<gap:plugin name="cordova-plugin-googlemaps" source="npm">
+<!--<gap:plugin name="cordova-plugin-googlemaps" source="npm">
 <param name="API_KEY_FOR_ANDROID" value="AIzaSyCXFNRlaxHSxI8Gqk0iaII5YDTTLwGejSM" />
 <param name="API_KEY_FOR_IOS" value="AIzaSyA0tumqw8e4mmN5_7VH0GCxHtUtSiAZKbI" />
-</gap:plugin>
+</gap:plugin>-->
 
 <gap:config-file platform="ios" parent="CFBundleShortVersionString">
 <string>100</string>
