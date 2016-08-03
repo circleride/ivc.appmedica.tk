@@ -54,7 +54,7 @@
 <nav role="navigation" class="navbar topnavbar">
 <!-- START navbar header onclick="url_target('/load_ajax.php?html=');" -->
 <div class="navbar-header">
-<a href="./"  class="navbar-brand">
+<a href="index.html" class="navbar-brand">
 <div class="brand-logo">
 <img src="img/logo.png" alt="App Logo" class="img-responsive">
 </div>
@@ -126,7 +126,7 @@
 <!-- End Body -->
 </div>
 
-<div id="info_device">.</div>
+<div id="info_device"></div>
 
 </div>
 </section>
@@ -162,8 +162,8 @@ if(page) {
 $('.ajax-content').html('<div align="center"><br><br><h4><i class="fa fa-spinner fa-spin"></i></h4><br></div>');
 $.getJSON(window.url_server+"/movil/html.templates.php", { key: window.my_uuid, html: page, id: id, view_as: 'json' }, function (j) {
 //var data_html = j['html']; //$(".ajax-content").html(data_html);
-var stateObj = { html: url };
-history.pushState(stateObj, "", "index.?html="+url+"&id="+id);
+var stateObj = { html: page };
+history.pushState(stateObj, "", "index.html?html="+page+"&id="+id);
 var data_html = j['content'];
 $(".ajax-content").html(data_html);
 window.onpopstate = function(event) { window.url_target(""); };
