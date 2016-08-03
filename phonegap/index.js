@@ -111,7 +111,7 @@ var push = PushNotification.init({
 });
 
 push.on('registration', function(data) {
-$("#info_device").append(JSON.stringify(data));
+//$("#info_device").append(JSON.stringify(data));
 //console.log('registration event: ' + data.registrationId);
 var oldRegId = localStorage.getItem('registrationId');
 if (oldRegId !== data.registrationId) {
@@ -129,7 +129,7 @@ window.localStorage.setItem("token_push", JSON.stringify(data));
 });
 push.on('error', function(e) {
 //console.log("push error = " + e.message);
-$("#info_device").append(JSON.stringify(e));
+//$("#info_device").append(JSON.stringify(e));
 //window.localStorage.setItem("token_push", JSON.stringify(e));
 if(typeof GetPushNotif == 'function') {
 window.GetPushNotif(data);
@@ -139,9 +139,9 @@ window.GetPushNotif = data;
 });
 
 push.on('notification', function(data) {
-$("#info_device").append(JSON.stringify(data));
+//$("#info_device").append(JSON.stringify(data));
 //window.localStorage.setItem("token_push", JSON.stringify(data));
-console.log('notification event');
+//console.log('notification event');
 //window.GetPushNotif = function GetPushNotif(data) {  };
 if(typeof GetPushNotif == 'function') {
 window.GetPushNotif(data);
@@ -159,3 +159,45 @@ data.title,           // title
 };
 
 app.initialize();
+
+jQuery(document).ready(function($) {
+window.enable_areyousure = function enable_areyousure() {
+$('form').areYouSure( {'message':'Aun no guarda cambios &iquest;est&aacute; seguro?'} );
+};
+});
+
+jQuery(document).ready(function($){
+window.enable_geocomplete = function enable_geocomplete(target) {
+if(target){ } else { target = ".Direccion"; }
+$(target).geocomplete({
+details: "form",
+types: ["geocode", "establishment"],
+detailsAttribute: "data-geo",
+});
+$(target).bind("geocode:dragged", function(event, latLng){
+$("input[name=Lat]").val(latLng.lat());
+$("input[name=Lon]").val(latLng.lng());
+});
+//$("#reset").click(function(){ $(target).geocomplete("resetMarker"); $("#reset").hide(); return false; });
+};
+});
+
+window.pop_get_form = function pop_get_form(url) {
+$(".modal-content").html('<div align="center"><i class="fa fa-share fa-spin"></i></div>');
+$(".modal-content").load(window.url_server+'/'+ url);
+};
+
+jQuery(document).ready(function($){
+window.enable_gallery = function enable_gallery(class_lg){
+if(class_lg == ""){ class_lg = ".gallery_lg"; }
+$(class_lg).lightGallery({
+thumbnail:false,
+animateThumb: false,
+showThumbByDefault: false,
+fullScreen: false,
+download: false,
+hash: false
+});
+};
+window.enable_gallery();
+});
