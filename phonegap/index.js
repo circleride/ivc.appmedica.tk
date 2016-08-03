@@ -160,6 +160,25 @@ data.title,           // title
 
 app.initialize();
 
+window.url_target = function url_target(page,id){
+if(id == "undefined"){ id = ""; }
+if(page) {
+$('.ajax-content').html('<div align="center"><br><br><h4><i class="fa fa-spinner fa-spin"></i></h4><br></div>');
+$.getJSON(window.url_server+"/movil/html.templates.php", { key: window.my_uuid, html: page, id: id, view_as: 'json' }, function (j) {
+//var data_html = j['html']; //$(".ajax-content").html(data_html);
+var stateObj = { html: page };
+history.pushState(stateObj, "", "index.html?html="+page);
+var data_html = j['content'];
+$(".ajax-content").html(data_html);
+window.onpopstate = function(event) { window.url_target(""); };
+});
+}};
+
+document.addEventListener("backbutton", backKeyDown, true);
+function backKeyDown(){
+window.url_target("");
+}
+
 jQuery(document).ready(function($) {
 window.enable_areyousure = function enable_areyousure() {
 $('form').areYouSure( {'message':'Aun no guarda cambios &iquest;est&aacute; seguro?'} );
