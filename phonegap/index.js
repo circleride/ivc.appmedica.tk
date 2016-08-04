@@ -153,12 +153,9 @@ if(page == "undefined" || page == null || page == ""){ page = ""; }
 alert(page+" : "+id);
 $('.ajax-content').html('<div align="center"><br><br><h4><i class="fa fa-spinner fa-spin"></i></h4><br></div>');
 $.getJSON(window.url_server+"/movil/html.templates.php", { key: window.my_uuid, html: page, id: id, view_as: 'json' }, function (j) {
-//var data_html = j['html']; //$(".ajax-content").html(data_html);
 var stateObj = { html: page };
-//history.pushState(stateObj, "", "index.html?html="+page);
 var data_html = j['content'];
 $(".ajax-content").html(data_html);
-//window.onpopstate = function(event) { window.url_target(""); };
 });
 };
 document.addEventListener("backbutton", onBackKeyDown, false);
@@ -176,16 +173,10 @@ function onSearchKeyDown() {
 window.url_target("");
 }
 
-}
-};
-
-app.initialize();
-
-jQuery(document).ready(function($) {
+jQuery(document).ready(function($){  });
 window.enable_areyousure = function enable_areyousure() {
 $('form').areYouSure( {'message':'Aun no guarda cambios &iquest;est&aacute; seguro?'} );
 };
-
 window.enable_geocomplete = function enable_geocomplete(target) {
 alert(target);
 if(target){ } else { target = ".Direccion"; }
@@ -200,14 +191,12 @@ $("input[name=Lon]").val(latLng.lng());
 });
 //$("#reset").click(function(){ $(target).geocomplete("resetMarker"); $("#reset").hide(); return false; });
 };
-});
 
 window.pop_get_form = function pop_get_form(url) {
 $(".modal-content").html('<div align="center"><i class="fa fa-share fa-spin"></i></div>');
 $(".modal-content").load(window.url_server+'/'+ url);
 };
 
-jQuery(document).ready(function($){
 window.enable_gallery = function enable_gallery(class_lg){
 alert(class_lg);
 if(class_lg == ""){ class_lg = ".gallery_lg"; }
@@ -221,4 +210,9 @@ hash: false
 });
 };
 window.enable_gallery();
-});
+
+
+}
+};
+
+app.initialize();
