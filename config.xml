@@ -14,7 +14,7 @@
 <preference name="phonegap-version" value="cli-6.1.0" />
 
 <preference name="DisallowOverscroll" value="true" />
-<preference name="android-minSdkVersion" value="15" />
+<preference name="android-minSdkVersion" value="14" />
 <preference name="android-build-tool" value="gradle" />
 
 <preference name="permissions"                value="none"/>
@@ -59,7 +59,7 @@
 <!-- <plugin name="cordova-plugin-health" source="npm" /> -->
 <!-- <plugin spec="https://github.com/Litekey/heartbeat-cordova-plugin.git" source="git" /> -->
 
-<gap:plugin name="phonegap-plugin-barcodescanner" source="npm" />
+<!-- <gap:plugin name="phonegap-plugin-barcodescanner" source="npm" />-->
 <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 
 <!-- <plugin name="phonegap-plugin-push" spec="1.6.0" source="npm">
