@@ -20,10 +20,10 @@
 <preference name="permissions"                value="none"/>
 <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
 <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
-<preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
+<preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
 <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
 <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
-<preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
+<preference name="stay-in-webview"            value="true" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
 <preference name="ios-statusbarstyle"         value="black-opaque" />   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
 <preference name="detect-data-types"          value="true" />           <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
 <preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
@@ -63,8 +63,8 @@
 <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 
 <!-- <plugin name="phonegap-plugin-push" spec="1.6.0" source="npm">
-<plugin name="phonegap-plugin-push" spec="1.7.4" source="npm"> -->
-<plugin name="phonegap-plugin-push" source="npm">
+<plugin name="phonegap-plugin-push" source="npm"> -->
+<plugin name="phonegap-plugin-push" spec="1.7.4" source="npm">
 <param name="SENDER_ID" value="930456109326" />
 </plugin>
 
