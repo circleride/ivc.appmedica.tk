@@ -91,7 +91,6 @@ this.bindEvents();
 // 'load', 'deviceready', 'offline', and 'online'.
 bindEvents: function() {
 document.addEventListener('deviceready', this.onDeviceReady, false);
-document.getElementById('scan').addEventListener('click', this.scan, false);
 },
 onDeviceReady: function() {
 app.setupPush();
@@ -124,11 +123,6 @@ push.on('error', function(e) {
 alert(JSON.stringify(e));
 //$("#info_device").append(JSON.stringify(e));
 //window.localStorage.setItem("token_push", JSON.stringify(e));
-if(typeof GetPushNotif == 'function') {
-window.GetPushNotif(data);
-} else {
-window.GetPushNotif = data;
-}
 });
 
 push.on('notification', function(data) {

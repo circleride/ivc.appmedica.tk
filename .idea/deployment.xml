@@ -107,6 +107,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="panel.lechemarsella.com">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="srv.appmedica.tk">
         <serverdata>
           <mappings>
