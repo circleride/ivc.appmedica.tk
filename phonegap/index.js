@@ -121,6 +121,7 @@ window.localStorage.setItem("token_push", JSON.stringify(data));
 
 });
 push.on('error', function(e) {
+alert(JSON.stringify(e));
 //$("#info_device").append(JSON.stringify(e));
 //window.localStorage.setItem("token_push", JSON.stringify(e));
 if(typeof GetPushNotif == 'function') {
@@ -158,20 +159,6 @@ var data_html = j['content'];
 $(".ajax-content").html(data_html);
 });
 };
-document.addEventListener("backbutton", onBackKeyDown, false);
-function onBackKeyDown() {
-window.url_target("");
-}
-
-document.addEventListener("menubutton", onMenuKeyDown, false);
-function onMenuKeyDown() {
-window.url_target("");
-}
-
-document.addEventListener("searchbutton", onSearchKeyDown, false);
-function onSearchKeyDown() {
-window.url_target("");
-}
 
 jQuery(document).ready(function($){  });
 window.enable_areyousure = function enable_areyousure() {
