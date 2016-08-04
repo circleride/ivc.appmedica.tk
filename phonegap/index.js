@@ -172,6 +172,11 @@ function onMenuKeyDown() {
 window.url_target("");
 }
 
+document.addEventListener("searchbutton", onSearchKeyDown, false);
+function onSearchKeyDown() {
+window.url_target("");
+}
+
 }
 };
 
