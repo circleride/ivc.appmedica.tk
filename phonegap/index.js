@@ -110,6 +110,7 @@ var push = PushNotification.init({
 });
 
 push.on('registration', function(data) {
+alert(JSON.stringify("reg: "+data));
 //$("#info_device").append(JSON.stringify(data));
 //console.log('registration event: ' + data.registrationId);
 var oldRegId = localStorage.getItem('registrationId');
@@ -120,7 +121,7 @@ window.localStorage.setItem("token_push", JSON.stringify(data));
 
 });
 push.on('error', function(e) {
-alert(JSON.stringify(e));
+alert(JSON.stringify("error: "+e));
 //$("#info_device").append(JSON.stringify(e));
 //window.localStorage.setItem("token_push", JSON.stringify(e));
 });
@@ -155,43 +156,6 @@ $(".ajax-content").html(data_html);
 };
 
 jQuery(document).ready(function($){  });
-window.enable_areyousure = function enable_areyousure() {
-$('form').areYouSure( {'message':'Aun no guarda cambios &iquest;est&aacute; seguro?'} );
-};
-window.enable_geocomplete = function enable_geocomplete(target) {
-alert(target);
-if(target){ } else { target = ".Direccion"; }
-$(target).geocomplete({
-details: "form",
-types: ["geocode", "establishment"],
-detailsAttribute: "data-geo"
-});
-$(target).bind("geocode:dragged", function(event, latLng){
-$("input[name=Lat]").val(latLng.lat());
-$("input[name=Lon]").val(latLng.lng());
-});
-//$("#reset").click(function(){ $(target).geocomplete("resetMarker"); $("#reset").hide(); return false; });
-};
-
-window.pop_get_form = function pop_get_form(url) {
-$(".modal-content").html('<div align="center"><i class="fa fa-share fa-spin"></i></div>');
-$(".modal-content").load(window.url_server+'/'+ url);
-};
-
-window.enable_gallery = function enable_gallery(class_lg){
-alert(class_lg);
-if(class_lg == ""){ class_lg = ".gallery_lg"; }
-$(class_lg).lightGallery({
-thumbnail:false,
-animateThumb: false,
-showThumbByDefault: false,
-fullScreen: false,
-download: false,
-hash: false
-});
-};
-window.enable_gallery();
-
 
 }
 };
