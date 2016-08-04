@@ -14,6 +14,7 @@
 
 <preference name="DisallowOverscroll" value="true" />
 <preference name="android-minSdkVersion" value="15" />
+<preference name="android-build-tool" value="gradle" />
 
 <preference name="permissions"                value="none"/>
 <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
@@ -31,7 +32,6 @@
 <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
 <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 <preference name="CameraUsesGeolocation" value="true" />
-<preference name="android-build-tool" value="gradle" />
 
 <plugin name="cordova-plugin-camera" source="npm" />
 <plugin name="cordova-plugin-media-capture" source="npm" />
