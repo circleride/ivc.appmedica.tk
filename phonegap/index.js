@@ -162,7 +162,13 @@ $(".ajax-content").html(data_html);
 }
 };
 document.addEventListener("backbutton", onBackKeyDown, false);
-function onBackKeyDown() {
+function onBackKeyDown(bb) {
+alert(JSON.stringify(bb));
+window.url_target("");
+}
+
+document.addEventListener("menubutton", onMenuKeyDown, false);
+function onMenuKeyDown() {
 window.url_target("");
 }
 
