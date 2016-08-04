@@ -188,6 +188,7 @@ $('form').areYouSure( {'message':'Aun no guarda cambios &iquest;est&aacute; segu
 };
 
 window.enable_geocomplete = function enable_geocomplete(target) {
+alert(target);
 if(target){ } else { target = ".Direccion"; }
 $(target).geocomplete({
 details: "form",
@@ -209,6 +210,7 @@ $(".modal-content").load(window.url_server+'/'+ url);
 
 jQuery(document).ready(function($){
 window.enable_gallery = function enable_gallery(class_lg){
+alert(class_lg);
 if(class_lg == ""){ class_lg = ".gallery_lg"; }
 $(class_lg).lightGallery({
 thumbnail:false,
