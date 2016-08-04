@@ -1,5 +1,4 @@
-function function_exists(func)
-{
+function function_exists(func) {
 return (eval('typeof '+func) === 'function' || false);
 }
 
@@ -162,10 +161,11 @@ window.onpopstate = function(event) { window.url_target(""); };
 });
 }
 };
-document.addEventListener("backbutton", backKeyDown, true);
-function backKeyDown(){
+document.addEventListener("backbutton", onBackKeyDown, false);
+function onBackKeyDown() {
 window.url_target("");
 }
+
 }
 };
 
@@ -175,15 +175,13 @@ jQuery(document).ready(function($) {
 window.enable_areyousure = function enable_areyousure() {
 $('form').areYouSure( {'message':'Aun no guarda cambios &iquest;est&aacute; seguro?'} );
 };
-});
 
-jQuery(document).ready(function($){
 window.enable_geocomplete = function enable_geocomplete(target) {
 if(target){ } else { target = ".Direccion"; }
 $(target).geocomplete({
 details: "form",
 types: ["geocode", "establishment"],
-detailsAttribute: "data-geo",
+detailsAttribute: "data-geo"
 });
 $(target).bind("geocode:dragged", function(event, latLng){
 $("input[name=Lat]").val(latLng.lat());
