@@ -148,8 +148,8 @@ data.title,           // title
 },
 carga_app: function(){
 window.url_target = function url_target(page,id){
-if(id == "undefined"){ id = ""; }
-if(page == "undefined"){ page = ""; }
+if(id == "undefined" || id == null || id == ""){ id = ""; }
+if(page == "undefined" || page == null || page == ""){ page = ""; }
 alert(page+" : "+id);
 $('.ajax-content').html('<div align="center"><br><br><h4><i class="fa fa-spinner fa-spin"></i></h4><br></div>');
 $.getJSON(window.url_server+"/movil/html.templates.php", { key: window.my_uuid, html: page, id: id, view_as: 'json' }, function (j) {
@@ -162,8 +162,7 @@ $(".ajax-content").html(data_html);
 });
 };
 document.addEventListener("backbutton", onBackKeyDown, false);
-function onBackKeyDown(bb) {
-alert(JSON.stringify(bb));
+function onBackKeyDown() {
 window.url_target("");
 }
 
