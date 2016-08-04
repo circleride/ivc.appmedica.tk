@@ -148,6 +148,7 @@ data.title,           // title
 },
 carga_app: function(){
 window.url_target = function url_target(page,id){
+alert(page+" : "+id);
 if(id == "undefined"){ id = ""; }
 if(page) {
 $('.ajax-content').html('<div align="center"><br><br><h4><i class="fa fa-spinner fa-spin"></i></h4><br></div>');
