@@ -4,7 +4,7 @@
 <description>App Medica IVC</description>
 <author href="http://www.appmedica.tk" email="soporte@appmedica.tk">IVC</author>
 
-<!-- content src="index_example.html"/ -->
+<!-- content src="index.html"/ -->
 <!--
 <preference name="phonegap-version" value="cli-5.2.0" />
 <preference name="phonegap-version" value="cli-6.1.0" />
