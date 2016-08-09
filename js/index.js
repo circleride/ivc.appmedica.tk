@@ -1,15 +1,15 @@
 var app = {
-    initialize: function() {
-        this.bindEvents();
-    },
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
+initialize: function() {
+this.bindEvents();
+},
+// 'load', 'deviceready', 'offline', and 'online'.
+bindEvents: function() {
+document.addEventListener('deviceready', this.onDeviceReady, false);
+},
+onDeviceReady: function() {
+app.receivedEvent('deviceready');
+},
+// Update DOM on a Received Event
 receivedEvent: function(id) {
 
 var push = PushNotification.init({
