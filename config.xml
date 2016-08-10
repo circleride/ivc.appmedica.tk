@@ -15,8 +15,8 @@ App Medica IVC
 <preference name="phonegap-version" value="cli-5.2.0" />
 <preference name="phonegap-version" value="cli-6.1.0" />
 <preference name="phonegap-version" value="cli-6.3.0" />
--->
 <preference name="phonegap-version" value="cli-5.2.0" />
+-->
 
 <preference name="DisallowOverscroll" value="true"/>
 <preference name="android-minSdkVersion" value="14"/>
@@ -58,8 +58,10 @@ App Medica IVC
 
 <preference name="android-build-tool" value="gradle" />
 
-<!-- <plugin name="phonegap-plugin-push" source="npm"> -->
+<!-- <plugin name="phonegap-plugin-push" source="npm">
 <plugin name="phonegap-plugin-push" spec="1.8.0" source="npm">
+-->
+<plugin name="phonegap-plugin-push" source="npm">
 <param name="SENDER_ID" value="930456109326" />
 </plugin>
 
