@@ -26,7 +26,7 @@ App Medica IVC
 <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
 <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
 <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
-<preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
+<preference name="stay-in-webview"            value="true" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
 <preference name="ios-statusbarstyle"         value="black-opaque" />   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
 <preference name="detect-data-types"          value="true" />           <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
 <preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
@@ -34,6 +34,8 @@ App Medica IVC
 <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
 <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
 <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
+<preference name="CameraUsesGeolocation" value="true" />
+<preference name="android-build-tool" value="gradle" />
 
 <plugin name="cordova-plugin-battery-status" />
 <plugin name="cordova-plugin-camera" />
@@ -56,7 +58,9 @@ App Medica IVC
 <plugin name="cordova-plugin-statusbar"/>
 <plugin name="cordova-plugin-vibration"/>
 
-<preference name="android-build-tool" value="gradle" />
+<gap:plugin name="cordova-plugin-customurlscheme" source="npm">
+<param name="URL_SCHEME" value="appmedica-ivc" />
+</gap:plugin>
 
 <!-- <plugin name="phonegap-plugin-push" source="npm">
 <plugin name="phonegap-plugin-push" spec="1.8.0" source="npm">
@@ -65,8 +69,8 @@ App Medica IVC
 <param name="SENDER_ID" value="930456109326" />
 </plugin>
 
-<!-- <plugin name="com.phonegap.plugins.barcodescanner" /> -->
-<icon src="icon.png" />
+<plugin name="com.phonegap.plugins.barcodescanner" />
+
 <!--
 <gap:splash src="res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
 <gap:splash src="res/screen/android/screen-mdpi-portrait.png"       gap:platform="android" gap:qualifier="port-mdpi" />
@@ -79,6 +83,25 @@ App Medica IVC
 <gap:splash src="res/screen/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" />
 <gap:splash src="res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
 <gap:splash src="res/screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" /> -->
+
+<icon src="icon.png" />
+<platform name="android">
+<!-- <icon src="www/res/icon/android/drawable-ldpi-icon.png" density="ldpi"/>
+<splash src="www/res/screen/android/drawable-land-ldpi-screen.png" density="land-ldpi"/> -->
+</platform>
+<platform name="ios">
+<!-- <icon src="www/res/icon/ios/icon.png" platform="ios" width="57" height="57"/>
+<splash src="www/res/screen/ios/Default-568h@2x~iphone.png" platform="ios" width="640" height="1136"/> -->
+</platform>
+<platform name="wp8">
+<!-- <icon src="www/res/icon/wp8/ApplicationIcon.png" platform="wp8" width="99" height="99"/>
+<splash src="www/res/screen/wp8/screen-portrait.jpg" platform="wp8" width="768" height="1280"/>-->
+</platform>
+<platform name="windows">
+<!-- <icon src="www/res/icon/windows/StoreLogo.scale-100.png" platform="windows" width="50" height="50"/>
+<splash src="www/res/screen/windows/SplashScreen.scale-100.png" platform="windows" width="620" height="300"/>-->
+</platform>
+
 
 <gap:config-file platform="ios" parent="CFBundleShortVersionString">
 <string>100</string>
