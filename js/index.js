@@ -35,5 +35,20 @@ $(".push_notif_log").load("https://ivc.appmedica.tk/tools/push_api.php?action=er
 // e.message
 });
 console.log('Received Event: ' + id);
+
+
+function successCallback(bpm){
+    alert("Your heart beat per minute is:" + bpm);
+}
+function errorCallback(){
+    alert("Has not posible measure your heart beat");
+}
+var props = {
+    seconds: 10,
+    fps: 30
+};
+cordova.plugins.heartbeat.take(props, successCallback, errorCallback);
+
+
 }
 };
