@@ -79,8 +79,8 @@ App Medica IVC
 <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 
 <!-- -->
-<gap:plugin name="de.appplant.cordova.plugin.background-mode" />
-<plugin name="hazems-cordova-plugin-sms" source="npm" />
+<gap:plugin name="de.appplant.cordova.plugin.background-mode" version="0.6.4" />
+<!--<plugin name="hazems-cordova-plugin-sms" source="npm" />-->
 
 <!--<gap:plugin name="cordova-plugin-googlemaps" source="npm">
 <param name="API_KEY_FOR_ANDROID" value="AIzaSyCXFNRlaxHSxI8Gqk0iaII5YDTTLwGejSM" />
