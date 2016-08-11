@@ -23,7 +23,7 @@ App Medica IVC
 <preference name="permissions"                value="none"/>
 <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
 <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
-<preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
+<preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
 <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
 <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
 <preference name="stay-in-webview"            value="true" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
@@ -71,6 +71,12 @@ App Medica IVC
 </plugin>
 
 <plugin name="com.phonegap.plugins.barcodescanner" />
+
+<gap:plugin name="cordova-plugin-flashlight" source="npm" />
+<plugin name="cordova-plugin-health" source="npm" />
+<!-- <plugin spec="https://github.com/Litekey/heartbeat-cordova-plugin.git" source="git" /> -->
+
+<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 
 <!--
 <gap:splash src="res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
