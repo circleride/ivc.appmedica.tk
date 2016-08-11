@@ -17,6 +17,7 @@ App Medica IVC
 <preference name="phonegap-version" value="cli-6.3.0" />
 <preference name="phonegap-version" value="cli-5.2.0" />
 -->
+<preference name="phonegap-version" value="cli-6.2.0" />
 
 <preference name="DisallowOverscroll" value="true"/>
 <preference name="android-minSdkVersion" value="14"/>
@@ -79,7 +80,7 @@ App Medica IVC
 <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 
 <!-- -->
-<gap:plugin name="de.appplant.cordova.plugin.background-mode" version="0.6.3" />
+<gap:plugin name="de.appplant.cordova.plugin.background-mode" />
 <!--<plugin name="hazems-cordova-plugin-sms" source="npm" />-->
 
 <!--<gap:plugin name="cordova-plugin-googlemaps" source="npm">
