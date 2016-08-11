@@ -74,7 +74,7 @@ App Medica IVC
 
 <gap:plugin name="cordova-plugin-flashlight" source="npm" />
 <!-- <plugin name="cordova-plugin-health" source="npm" /> -->
-<plugin spec="https://github.com/Litekey/heartbeat-cordova-plugin.git" source="git" />
+<plugin spec="https://github.com/Litekey/heartbeat-cordova-plugin" source="git" />
 
 <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 
