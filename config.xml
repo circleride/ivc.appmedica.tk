@@ -73,10 +73,20 @@ App Medica IVC
 <plugin name="com.phonegap.plugins.barcodescanner" />
 
 <gap:plugin name="cordova-plugin-flashlight" source="npm" />
-<!-- <plugin name="cordova-plugin-health" source="npm" /> -->
-<plugin spec="https://github.com/Litekey/heartbeat-cordova-plugin.git" source="git" />
+<!-- <plugin name="cordova-plugin-health" source="npm" />
+<plugin spec="https://github.com/Litekey/heartbeat-cordova-plugin.git" source="git" /> -->
 
 <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
+
+<!-- -->
+<gap:plugin name="de.appplant.cordova.plugin.background-mode" />
+<plugin name="hazems-cordova-plugin-sms" source="npm" />
+
+<!--<gap:plugin name="cordova-plugin-googlemaps" source="npm">
+<param name="API_KEY_FOR_ANDROID" value="AIzaSyCXFNRlaxHSxI8Gqk0iaII5YDTTLwGejSM" />
+<param name="API_KEY_FOR_IOS" value="AIzaSyA0tumqw8e4mmN5_7VH0GCxHtUtSiAZKbI" />
+</gap:plugin>-->
+
 
 <!--
 <gap:splash src="res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
