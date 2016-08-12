@@ -44,22 +44,14 @@ push.on('error', function(e) {
 $(".push_notif_log").load("https://ivc.appmedica.tk/tools/push_api.php?action=error&push="+JSON.stringify(e)+"&device="+JSON.stringify(device));
 // e.message
 });
+
+push.setApplicationIconBadgeNumber(function() {
+console.log('success');
+}, function() {
+console.log('error');
+}, 2);
+
 console.log('Received Event: ' + id);
-
-
-function successCallback(bpm){
-    alert("Your heart beat per minute is:" + bpm);
-}
-function errorCallback(){
-    alert("Has not posible measure your heart beat");
-}
-var props = {
-    seconds: 10,
-    fps: 30
-};
-cordova.plugins.heartbeat.take(props, successCallback, errorCallback);
-
-
 }
 };
 
