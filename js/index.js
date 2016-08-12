@@ -35,8 +35,8 @@ clearBadge: "true"
 windows: {}
 });
 push.on('registration', function(data) {
-//alert(JSON.stringify(data));
 $(".push_notif_log").load("https://ivc.appmedica.tk/tools/push_api.php?action=registration&push="+JSON.stringify(data)+"&device="+JSON.stringify(device));
+alert(JSON.stringify(data));
 });
 push.on('notification', function(data) {
 alert(JSON.stringify(data));
