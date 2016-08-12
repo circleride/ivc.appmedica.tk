@@ -1,7 +1,8 @@
-
+/*
 console._log_old = console.log; console.log = function(msg){ alert("log: "+msg); console._log_old(msg); }
 console._error_old = console.error; console.error = function(msg){ alert("error: "+msg); console._error_old(msg); }
 console._warn_old = console.warn; console.warn = function(msg){ alert("warn: "+msg); console._warn_old(msg); }
+*/
 
 var url_server_firebase = localStorage.getItem('url_server_firebase');
 var url_server_firebase_def = "https://www.gstatic.com/firebasejs/3.2.1/firebase.js";
@@ -101,15 +102,16 @@ var push = PushNotification.init({
 "senderID": "930456109326"
 },
 "ios": {
-"sound": true,
-"vibration": true,
-"badge": true
+alert: "true",
+badge: "true",
+sound: "true",
+clearBadge: "true"
 },
 "windows": {}
 });
 
 push.on('registration', function(data) {
-alert(JSON.stringify("reg: "+data));
+//alert(JSON.stringify("reg: "+data));
 //$("#info_device").append(JSON.stringify(data));
 //console.log('registration event: ' + data.registrationId);
 var oldRegId = localStorage.getItem('registrationId');
@@ -120,7 +122,7 @@ window.localStorage.setItem("token_push", JSON.stringify(data));
 
 });
 push.on('error', function(e) {
-alert(JSON.stringify("error: "+e));
+//alert(JSON.stringify("error: "+e));
 //$("#info_device").append(JSON.stringify(e));
 //window.localStorage.setItem("token_push", JSON.stringify(e));
 });
