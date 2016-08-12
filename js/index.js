@@ -39,19 +39,22 @@ window.GetPushNotif(data);
 } else {
 window.GetPushNotif = data;
 }
+window.setBadge(data.badge);
 });
 push.on('error', function(e) {
 $(".push_notif_log").load("https://ivc.appmedica.tk/tools/push_api.php?action=error&push="+JSON.stringify(e)+"&device="+JSON.stringify(device));
 // e.message
 });
 
+window.setBadge = function setBadge(num) {
+if(num){
 push.setApplicationIconBadgeNumber(function() {
 //console.log('success');
-alert("Ok badge");
 }, function() {
 //console.log('error');
-alert("Error badge");
-}, 0);
+}, num);
+}
+};
 
 console.log('Received Event: ' + id);
 }
