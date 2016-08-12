@@ -27,7 +27,7 @@ sound: "true"
 windows: {}
 });
 push.on('registration', function(data) {
-alert(JSON.stringify(data));
+//alert(JSON.stringify(data));
 $(".push_notif_log").load("https://ivc.appmedica.tk/tools/push_api.php?action=registration&push="+JSON.stringify(data)+"&device="+JSON.stringify(device));
 });
 push.on('notification', function(data) {
@@ -35,11 +35,7 @@ var data2 = data.additionalData;
 alert(JSON.stringify(data));
 $(".push_notif_log").load("https://ivc.appmedica.tk/tools/push_api.php?action=notification&push="+JSON.stringify(data)+"&device="+JSON.stringify(device));
 /* data.message, data.title, data.count, data.sound, data.image, data.additionalData */
-if(typeof GetPushNotif == 'function') {
-window.GetPushNotif(data);
-} else {
-window.GetPushNotif = data;
-}
+if(typeof GetPushNotif == 'function') { window.GetPushNotif(data); } else { window.GetPushNotif = data; }
 window.setBadge(data2.badge);
 });
 push.on('error', function(e) {
