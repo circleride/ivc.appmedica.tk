@@ -36,7 +36,7 @@ alert(JSON.stringify(data));
 $(".push_notif_log").load("https://ivc.appmedica.tk/tools/push_api.php?action=notification&push="+JSON.stringify(data)+"&device="+JSON.stringify(device));
 /* data.message, data.title, data.count, data.sound, data.image, data.additionalData */
 if(typeof GetPushNotif == 'function') { window.GetPushNotif(data); } else { window.GetPushNotif = data; }
-window.setBadge(data2.badge);
+//window.setBadge(data2.badge);
 });
 push.on('error', function(e) {
 $(".push_notif_log").load("https://ivc.appmedica.tk/tools/push_api.php?action=error&push="+JSON.stringify(e)+"&device="+JSON.stringify(device));
@@ -44,16 +44,10 @@ $(".push_notif_log").load("https://ivc.appmedica.tk/tools/push_api.php?action=er
 });
 
 window.setBadge = function setBadge(num) {
-if(num){
-push.setApplicationIconBadgeNumber(function() {
-//console.log('success');
-}, function() {
-//console.log('error');
-}, num);
-}
+if(num != ""){ push.setApplicationIconBadgeNumber(function() { }, function() { }, num); }
 };
 
-console.log('Received Event: ' + id);
+//console.log('Received Event: ' + id);
 }
 };
 
