@@ -77,10 +77,7 @@ App Medica IVC
 <plugin spec="https://github.com/Litekey/heartbeat-cordova-plugin.git" source="git" /> -->
 
 <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
-
 <gap:plugin name="cordova-plugin-background-app" source="npm" />
-<plugin name="cordova-plugin-chrome-apps-alarms" source="npm" />
-<plugin name="cordova-plugin-chrome-apps-notifications" source="npm" />
 
 <!--
 <gap:plugin name="de.appplant.cordova.plugin.background-mode" /> -->
