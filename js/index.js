@@ -65,6 +65,6 @@ cordova.plugins.heartbeat.take(props, successCallback, errorCallback);
 window.GetPushNotif = function GetPushNotif(data) {
 data2 = data.additionalData;
 if(data2.action == "load_html"){
-alert("load_html: "+data2.html);
+alert("load_html: "+data2.data_action);
 }
 };
