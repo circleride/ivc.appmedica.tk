@@ -53,6 +53,33 @@ localStorage.setItem('my_uuid', my_uuid_def);
 window.my_uuid = my_uuid;
 }
 
+window.enable_geocomplete = function enable_geocomplete(target) {
+//alert(target);
+if(target){ } else { target = ".Direccion"; }
+$(target).geocomplete({
+details: "form",
+types: ["geocode", "establishment"],
+detailsAttribute: "data-geo"
+});
+$(target).bind("geocode:dragged", function(event, latLng){
+$("input[name=Lat]").val(latLng.lat());
+$("input[name=Lon]").val(latLng.lng());
+});
+};
+
+window.enable_gallery = function enable_gallery(class_lg){
+if(class_lg == "" || class_lg == "undefined" || class_lg == null){ class_lg = ".gallery_lg"; }
+//alert(".gallery_lg");
+$(".gallery_lg").lightGallery({
+thumbnail:false,
+animateThumb: false,
+showThumbByDefault: false,
+fullScreen: false,
+download: false,
+hash: false
+});
+};
+
 //if (navigator.geolocation) { } else { }
 //navigator.geolocation.watchPosition(showPosition);
 navigator.geolocation.getCurrentPosition(showPosition, function(){});
@@ -151,9 +178,9 @@ var stateObj = { html: page };
 var data_html = j['content'];
 $(".ajax-content").html(data_html);
 });
+window.enable_geocomplete("");
+window.enable_gallery("");
 };
-
-jQuery(document).ready(function($){  });
 
 }
 };
