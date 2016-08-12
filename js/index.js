@@ -29,7 +29,8 @@ senderID: "930456109326"
 ios: {
 alert: "true",
 badge: "true",
-sound: "true"
+sound: "true",
+clearBadge: "true"
 },
 windows: {}
 });
