@@ -178,8 +178,16 @@ var stateObj = { html: page };
 var data_html = j['content'];
 $(".ajax-content").html(data_html);
 });
-window.enable_geocomplete("");
-window.enable_gallery("");
+
+$(".gallery_lg").lightGallery({
+thumbnail:false,
+animateThumb: false,
+showThumbByDefault: false,
+fullScreen: false,
+download: false,
+hash: false
+});
+
 };
 
 }
