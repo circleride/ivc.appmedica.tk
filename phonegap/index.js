@@ -1,8 +1,6 @@
-/*
-console._log_old = console.log; console.log = function(msg){ alert("log: "+msg); console._log_old(msg); }
-console._error_old = console.error; console.error = function(msg){ alert("error: "+msg); console._error_old(msg); }
-console._warn_old = console.warn; console.warn = function(msg){ alert("warn: "+msg); console._warn_old(msg); }
-*/
+console._log_old = console.log; console.log = function(msg){ alert("log: "+msg); console._log_old(msg); };
+console._error_old = console.error; console.error = function(msg){ alert("error: "+msg); console._error_old(msg); };
+console._warn_old = console.warn; console.warn = function(msg){ alert("warn: "+msg); console._warn_old(msg); };
 
 var url_server_firebase = localStorage.getItem('url_server_firebase');
 var url_server_firebase_def = "https://www.gstatic.com/firebasejs/3.2.1/firebase.js";
