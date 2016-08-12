@@ -49,7 +49,7 @@ push.setApplicationIconBadgeNumber(function() {
 console.log('success');
 }, function() {
 console.log('error');
-}, 2);
+}, 0);
 
 console.log('Received Event: ' + id);
 }
