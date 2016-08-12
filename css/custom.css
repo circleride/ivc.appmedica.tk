@@ -1,0 +1,51 @@
+.btn_menu_row {
+margin-bottom: 20px;
+}
+.btn_menu {
+height: 100px;
+display: table;
+text-align: center;
+}
+.btn_menu a {
+display: table-cell;
+vertical-align: middle;
+width: 100%;
+font-weight: bolder;
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+border-radius: 20px;
+padding: 10px;
+color: #fff;
+background-color: #4b91ea;
+border-color: #3483e7;
+font-size: 15px !important;
+text-decoration: none;
+height: 90px;
+text-align: center;
+}
+.btn_menu_green a {
+color: #fff;
+background-color: #27c24c !important;
+border-color: #26be4a !important;
+}
+.btn_menu:hover {
+color: #fff;
+background-color: transparent;
+border-color: transparent;
+text-decoration: none;
+}
+.btn_shadow {
+-webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
+box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.5);
+}
+.navbar-nav {
+margin: 0px -15px !important;
+}
+.img-responsive_fixed{
+max-width: 100% !important; height: auto !important;
+}
+.gallery_lg a {
+text-decoration: none;
+margin-bottom: 20px;
+}
