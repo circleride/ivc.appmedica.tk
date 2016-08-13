@@ -170,6 +170,27 @@ data.title,           // title
 });
 },
 carga_app: function(){
+
+}
+};
+
+app.initialize();
+
+jQuery(document).ready(function($){
+window.enable_gallery = function enable_gallery(class_lg){
+if(class_lg == ""){ class_lg = ".gallery_lg"; }
+$(class_lg).lightGallery({
+thumbnail:false,
+animateThumb: false,
+showThumbByDefault: false,
+fullScreen: false,
+download: false,
+hash: false
+});
+};
+window.enable_gallery();
+});
+
 window.url_target = function url_target(page,id){
 if(id == "undefined" || id == null || id == ""){ id = ""; }
 if(page == "undefined" || page == null || page == ""){ page = ""; }
@@ -181,18 +202,5 @@ var data_html = j['content'];
 $(".ajax-content").html(data_html);
 });
 
-$(".gallery_lg").lightGallery({
-thumbnail:false,
-animateThumb: false,
-showThumbByDefault: false,
-fullScreen: false,
-download: false,
-hash: false
-});
-
 };
 
-}
-};
-
-app.initialize();

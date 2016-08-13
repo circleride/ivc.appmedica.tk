@@ -163,9 +163,8 @@ $(this).prepend("No se pudo enlazar con el servidor.<br>" + e + "<br>"+jqxhr);
 };
 
 function onOffline() {
-$.getScript('phonegap/offline.js', function(){
+//$.getScript('phonegap/offline.js', function(){  });
 $(".ajax-content").html("<div class='main-content'><div align='center'><a href='index.html'>Sin conexi&oacute;n a la red, refrescar p&aacute;gina.</a></div></div>");
-});
 }
 
 window.BorrarLS = function BorrarLS() {
