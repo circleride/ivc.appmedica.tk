@@ -47,6 +47,7 @@
 <!-- <script src="vendor/lightgallery/js/lg-hash.js"></script>-->
 <!-- <script type="text/javascript" src="barcodescanner.js"></script> -->
 <!-- <script src="js/header_web.js"></script> -->
+<!---->
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="phonegap/index.js"></script>
 </head>
@@ -143,6 +144,7 @@
 </div>
 
 <script type="text/javascript" charset="ISO-8859-1">
+var device = {};
 //$.getScript(window.url_server_firebase, function(){ });
 window.onOnline = function onOnline(handle) {
 if(handle) {  } else { handle = window.handle_url; }
@@ -179,6 +181,7 @@ location = "index.html";
 navigator.notification.confirm('¿Esta seguro?', onConfirm,'Esta por borrar sus datos', ['Si','No'] );
 };
 
+ActivateOnline();
 document.addEventListener("offline", onOffline, false);
 document.addEventListener("online", ActivateOnline, false);
 function ActivateOnline(){ window.onOnline(); }
