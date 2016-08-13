@@ -1,4 +1,4 @@
-$.log = function(message){
-  var $logger = $("#logger");
-  $logger.html($logger.html() + "\n * " + message );
-}
+/* $.log = function(message){
+var $logger = $("#logger");
+$logger.html($logger.html() + "\n * " + message );
+}; */
