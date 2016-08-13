@@ -200,6 +200,7 @@ $.getJSON(window.url_server+"/movil/html.templates.php", { key: window.my_uuid, 
 var stateObj = { html: page };
 var data_html = j['content'];
 $(".ajax-content").html(data_html);
+$("body").removeClass("aside-toggled");
 });
 
 };
