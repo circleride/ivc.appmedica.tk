@@ -116,11 +116,12 @@ App Medica IVC
 <splash src="www/res/screen/wp8/screen-portrait.jpg" platform="wp8" width="768" height="1280"/>
 <icon src="www/res/icon/windows/StoreLogo.scale-100.png" platform="windows" width="50" height="50"/>
 <splash src="www/res/screen/windows/SplashScreen.scale-100.png" platform="windows" width="620" height="300"/>
+<platform name="windows">
+</platform>
 -->
 <platform name="wp8">
 </platform>
-<platform name="windows">
-</platform>
+
 
 <gap:config-file platform="ios" parent="CFBundleShortVersionString">
 <string>100</string>
