@@ -126,11 +126,12 @@ App Medica IVC
 <string>100</string>
 </gap:config-file>
 
-<allow-navigation href="*://*youtube.com" />
-
 <access origin="*"/>
 <!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
 <plugin name="cordova-plugin-whitelist" />
+
+<allow-navigation href="*" />
+
 <allow-intent href="http://*/*" />
 <allow-intent href="https://*/*" />
 <allow-intent href="tel:*" />
