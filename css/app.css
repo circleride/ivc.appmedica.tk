@@ -1,7 +1,8 @@
 @charset "UTF-8";
-@import url(fonts/Source_Sans_Pro.css);
 
-/* @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic); */
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic);
+
+/* @import url(fonts/Source_Sans_Pro.css); */
 /* * :) * */
 .glyphicon {
     display: inline-block;
