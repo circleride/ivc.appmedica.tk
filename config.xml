@@ -79,6 +79,8 @@ App Medica IVC
 <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 <gap:plugin name="cordova-plugin-background-app" source="npm" />
 
+<gap:plugin name="cordova-plugin-datepicker" source="npm" />
+
 <!--
 <gap:plugin name="de.appplant.cordova.plugin.background-mode" /> -->
 <!--<plugin name="hazems-cordova-plugin-sms" source="npm" />-->
