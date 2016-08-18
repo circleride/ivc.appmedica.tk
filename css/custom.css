@@ -1,5 +1,5 @@
 .btn_menu_row {
-margin-bottom: 20px;
+margin-bottom: 10px;
 }
 .btn_menu {
 height: 75px;
@@ -7,6 +7,27 @@ display: table;
 text-align: center;
 }
 .btn_menu a {
+display: table-cell;
+vertical-align: middle;
+width: 100%;
+font-weight: bolder;
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+border-radius: 20px;
+padding: 10px;
+color: #fff;
+background-color: #4b91ea;
+border-color: #3483e7;
+font-size: 15px !important;
+text-decoration: none;
+height: 75px;
+text-align: center;
+}
+
+.btn_menu_2 {
+
+}
+.btn_menu_2 a {
 display: table-cell;
 vertical-align: middle;
 width: 100%;
