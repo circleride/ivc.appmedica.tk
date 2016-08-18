@@ -1,8 +1,31 @@
 .btn_menu_row {
 margin-bottom: 10px;
 }
+.btn_menu_index {
+height: 70px;
+display: table;
+text-align: center;
+}
+.btn_menu_index a {
+display: table-cell;
+vertical-align: middle;
+width: 100%;
+font-weight: bolder;
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+border-radius: 20px;
+padding: 10px;
+color: #fff;
+background-color: #4b91ea;
+border-color: #3483e7;
+font-size: 15px !important;
+text-decoration: none;
+height: 70px;
+text-align: center;
+}
+
 .btn_menu {
-height: 75px;
+height: 110px;
 display: table;
 text-align: center;
 }
@@ -20,7 +43,7 @@ background-color: #4b91ea;
 border-color: #3483e7;
 font-size: 15px !important;
 text-decoration: none;
-height: 75px;
+height: 110px;
 text-align: center;
 }
 
