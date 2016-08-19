@@ -63,9 +63,6 @@ App Medica IVC
 <param name="URL_SCHEME" value="appmedica-ivc" />
 </gap:plugin>
 
-<!-- <plugin name="phonegap-plugin-push" source="npm">
-<plugin name="phonegap-plugin-push" spec="1.8.0" source="npm">
--->
 <plugin name="phonegap-plugin-push" source="npm">
 <param name="SENDER_ID" value="930456109326" />
 </plugin>
@@ -78,7 +75,6 @@ App Medica IVC
 
 <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 <gap:plugin name="cordova-plugin-background-app" source="npm" />
-
 <gap:plugin name="cordova-plugin-datepicker" source="npm" />
 
 <!--
@@ -129,7 +125,6 @@ App Medica IVC
 <gap:splash gap:platform="android" gap:qualifier="hdpi" src="res/screens/android/screen-hdpi-portrait.png" />
 <gap:splash gap:platform="android" gap:qualifier="xhdpi" src="res/screens/android/screen-xhdpi-portrait.png" />
 -->
-
 <!--
 <gap:splash src="res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
 <gap:splash src="res/screen/android/screen-mdpi-portrait.png"       gap:platform="android" gap:qualifier="port-mdpi" />
@@ -142,7 +137,6 @@ App Medica IVC
 <gap:splash src="res/screen/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" />
 <gap:splash src="res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
 <gap:splash src="res/screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" />
-
 <icon src="icon.png" />
 <platform name="android"> -->
 <!-- <icon src="www/res/icon/android/drawable-ldpi-icon.png" density="ldpi"/>
@@ -167,23 +161,19 @@ App Medica IVC
 <string>100</string>
 </gap:config-file>
 
-<access origin="*"/>
 <!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
+<access origin="*"/>
 <plugin name="cordova-plugin-whitelist" />
-
 <allow-navigation href="*" />
-
 <allow-intent href="http://*/*" />
 <allow-intent href="https://*/*" />
 <allow-intent href="tel:*" />
 <allow-intent href="sms:*" />
 <allow-intent href="mailto:*" />
 <allow-intent href="geo:*" />
-
 <platform name="android">
 <allow-intent href="market:*" />
 </platform>
-
 <platform name="ios">
 <allow-intent href="itms:*" />
 <allow-intent href="itms-apps:*" />
