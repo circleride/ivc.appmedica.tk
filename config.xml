@@ -23,7 +23,7 @@ App Medica IVC
 <preference name="permissions"                value="none"/>
 <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
 <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
-<preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
+<preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
 <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
 <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
 <preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
@@ -104,7 +104,6 @@ App Medica IVC
 <icon gap:platform="ios" src="res/icons/ios/icon-72-2x.png" width="144" height="144" />
 <icon gap:platform="ios" src="res/icons/ios/icon-76.png" width="76" height="76" />
 <icon gap:platform="ios" src="res/icons/ios/icon-76-2x.png" width="152" height="152" />
-
 <gap:splash gap:platform="ios" src="res/screens/ios/screen-iphone-portrait.png" width="320" height="480" />
 <gap:splash gap:platform="ios" src="res/screens/ios/screen-iphone-portrait-2x.png" width="640" height="960" />
 <gap:splash gap:platform="ios" src="res/screens/ios/screen-iphone-portrait-568h-2x.png" width="640" height="1136" />
@@ -140,8 +139,15 @@ App Medica IVC
 <gap:splash src="res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
 <gap:splash src="res/screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" />
 <icon src="icon.png" />
-<platform name="android"> -->
-<!-- <icon src="www/res/icon/android/drawable-ldpi-icon.png" density="ldpi"/>
+-->
+
+<gap:platform name="webos" />
+<gap:platform name="symbian.wrt" />
+<gap:platform name="blackberry" project="widgets" />
+
+<!--
+<platform name="android">
+<icon src="www/res/icon/android/drawable-ldpi-icon.png" density="ldpi"/>
 <splash src="www/res/screen/android/drawable-land-ldpi-screen.png" density="land-ldpi"/>
 </platform>
 <platform name="ios">
