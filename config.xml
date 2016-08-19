@@ -37,6 +37,8 @@ App Medica IVC
 <preference name="CameraUsesGeolocation" value="true" />
 <preference name="android-build-tool" value="gradle" />
 <preference name="SplashScreenDelay" value="100" />
+<preference name="AllowInlineMediaPlayback" value="true"/>
+<preference name="MediaPlaybackRequiresUserAction" value="false"/>
 
 <plugin name="cordova-plugin-battery-status" />
 <plugin name="cordova-plugin-camera" />
@@ -171,6 +173,7 @@ App Medica IVC
 <allow-intent href="sms:*" />
 <allow-intent href="mailto:*" />
 <allow-intent href="geo:*" />
+
 <platform name="android">
 <allow-intent href="market:*" />
 </platform>
