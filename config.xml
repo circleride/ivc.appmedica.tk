@@ -148,11 +148,11 @@ App Medica IVC
 </platform>
 <platform name="blackberry" project="widgets">
 </platform>
-<platform name="windows">
-</platform>
 <platform name="wp8">
 </platform>
 <!--
+<platform name="windows">
+</platform>
 <platform name="android">
 <icon src="www/res/icon/android/drawable-ldpi-icon.png" density="ldpi"/>
 <splash src="www/res/screen/android/drawable-land-ldpi-screen.png" density="land-ldpi"/>
