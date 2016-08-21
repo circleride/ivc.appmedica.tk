@@ -69,7 +69,8 @@ App Medica IVC
 <param name="SENDER_ID" value="930456109326" />
 </plugin>
 
-<plugin name="com.phonegap.plugins.barcodescanner" />
+<!---<plugin name="com.phonegap.plugins.barcodescanner" />-->
+<gap:plugin name="phonegap-plugin-barcodescanner" source="npm" />
 
 <gap:plugin name="cordova-plugin-flashlight" source="npm" />
 <!-- <plugin name="cordova-plugin-health" source="npm" />
