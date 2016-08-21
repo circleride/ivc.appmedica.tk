@@ -83,9 +83,8 @@ hash: false
 };
 
 //if (navigator.geolocation) { } else { }
-//navigator.geolocation.watchPosition(showPosition);
+/*
 navigator.geolocation.getCurrentPosition(showPosition, function(){});
-//alert("Geolicalizacion soportada.");
 function showPosition(position) {
 var Lat = position.coords.latitude;
 var Lon = position.coords.longitude;
@@ -99,7 +98,7 @@ $(".User_Lon").val(Lon);
 $(".User_LatLon_print").html(Lat+","+Lon);
 $(".User_Lat_print").html(Lat);
 $(".User_Lon_print").html(Lon);
-}
+}*/
 
 window.handle_url = "";
 function handleOpenURL(url) {
